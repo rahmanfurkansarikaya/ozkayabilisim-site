@@ -79,6 +79,15 @@ main {
   .container {
     width: min(100% - 24px, 1180px);
   }
+
+  .section-title {
+    max-width: 100%;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+    line-height: 1.08;
+  }
 }
 
 /* HEADER */
@@ -2147,7 +2156,6 @@ main {
     overflow-x: clip;
   }
 
-  .container,
   .hero-content-wrap,
   .inner-hero-grid,
   .split-grid,
