@@ -8,11 +8,13 @@ import GuvenlikSistemleri from "./sayfalar/GuvenlikSistemleri";
 import BilgisayarDonanim from "./sayfalar/BilgisayarDonanim";
 import Hakkimizda from "./sayfalar/Hakkimizda";
 import Iletisim from "./sayfalar/Iletisim";
+import Analytics from "./bilesenler/Analytics";
 
 export default function App() {
   return (
     <BrowserRouter>
     <ScrollToTop />
+    <Analytics />
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<AnaSayfa />} />
