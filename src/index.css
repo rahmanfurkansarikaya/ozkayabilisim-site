@@ -2144,9 +2144,6 @@ main {
     overflow-x: hidden;
   }
 
-  .site-header,
-  .top-bar,
-  .navbar,
   .hero,
   .inner-hero,
   .section,
@@ -2332,5 +2329,33 @@ main {
     max-width: 100%;
     font-size: 16px;
     line-height: 1.65;
+  }
+}
+
+/* iPhone Safari mobil menü düzeltmesi */
+
+@media (max-width: 1060px) {
+  .site-header,
+  .navbar {
+    overflow: visible !important;
+  }
+
+  .menu-button {
+    position: relative;
+    z-index: 10001;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav-links {
+    z-index: 10000;
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-links.open {
+    display: flex !important;
   }
 }
