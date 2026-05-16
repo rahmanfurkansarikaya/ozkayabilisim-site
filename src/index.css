@@ -11,13 +11,25 @@
 }
 
 html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   background: #f8f4ec;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -47,7 +59,9 @@ a {
   text-decoration: none;
 }
 
-img {
+img,
+video,
+iframe {
   max-width: 100%;
   display: block;
 }
@@ -59,6 +73,12 @@ main {
 .container {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 24px, 1180px);
+  }
 }
 
 /* HEADER */
@@ -2101,5 +2121,168 @@ main {
   .security-gallery-card img {
     height: auto;
     aspect-ratio: 1 / 1;
+  }
+}
+
+/* MOBILE OVERFLOW FIX */
+
+@media (max-width: 760px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .site-header,
+  .top-bar,
+  .navbar,
+  .hero,
+  .inner-hero,
+  .section,
+  .page-section,
+  .footer {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .container,
+  .hero-content-wrap,
+  .inner-hero-grid,
+  .split-grid,
+  .featured-service-grid,
+  .performance-grid,
+  .quick-service-list,
+  .detail-card-grid,
+  .process-grid,
+  .security-info-grid,
+  .security-gallery-grid,
+  .entertainment-card-grid,
+  .gaming-band,
+  .gaming-stats,
+  .hardware-feature-grid,
+  .about-intro-grid,
+  .about-value-grid,
+  .about-summary-grid,
+  .contact-card-grid,
+  .contact-detail-grid,
+  .footer-grid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-content-wrap > *,
+  .inner-hero-grid > *,
+  .split-grid > *,
+  .featured-service-grid > *,
+  .performance-grid > *,
+  .quick-service-list > *,
+  .detail-card-grid > *,
+  .process-grid > *,
+  .security-info-grid > *,
+  .security-gallery-grid > *,
+  .entertainment-card-grid > *,
+  .gaming-band > *,
+  .gaming-stats > *,
+  .hardware-feature-grid > *,
+  .about-intro-grid > *,
+  .about-value-grid > *,
+  .about-summary-grid > *,
+  .contact-card-grid > *,
+  .contact-detail-grid > *,
+  .footer-grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hero h1,
+  .inner-hero-content h1,
+  .page-card h1,
+  .section-title h2,
+  .split-content h2,
+  .process-content h2,
+  .cta-band h2,
+  .security-info-card h2,
+  .gaming-band h2,
+  .hardware-feature-card h2,
+  .about-intro-content h2,
+  .contact-info-panel h2 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 11vw, 46px);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+  }
+
+  .inner-hero-content h1 {
+    font-size: clamp(36px, 10vw, 42px);
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .hero-actions,
+  .contact-actions {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .inline-button,
+  .outline-button,
+  .nav-cta {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .nav-links {
+    max-width: calc(100vw - 24px);
+    overflow-x: hidden;
+  }
+
+  .page-card,
+  .featured-service-card,
+  .performance-card,
+  .detail-card,
+  .step-card,
+  .cta-band,
+  .security-info-card,
+  .security-gallery-card,
+  .entertainment-card,
+  .gaming-band,
+  .gaming-stats div,
+  .hardware-feature-card,
+  .about-logo-card,
+  .about-value-card,
+  .about-summary-card,
+  .contact-card,
+  .contact-info-panel,
+  .map-card,
+  .split-image {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .map-card {
+    min-height: 360px;
+  }
+
+  .map-card iframe {
+    width: 100%;
+    max-width: 100%;
+    min-height: 340px;
+  }
+
+  .floating-whatsapp {
+    right: 12px;
+    bottom: 12px;
+    max-width: calc(100vw - 24px);
+    white-space: normal;
   }
 }
