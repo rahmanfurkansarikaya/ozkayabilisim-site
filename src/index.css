@@ -2176,7 +2176,6 @@ main {
   .contact-card-grid,
   .contact-detail-grid,
   .footer-grid {
-    width: 100%;
     max-width: 100%;
     min-width: 0;
   }
@@ -2292,5 +2291,46 @@ main {
     bottom: 12px;
     max-width: calc(100vw - 24px);
     white-space: normal;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-content-wrap,
+  .inner-hero-grid,
+  .split-grid,
+  .process-grid,
+  .security-info-grid,
+  .hardware-feature-grid,
+  .about-intro-grid,
+  .contact-detail-grid,
+  .footer-grid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .inner-hero-content,
+  .hero-content,
+  .split-content,
+  .process-content,
+  .about-intro-content,
+  .contact-info-panel,
+  .footer-grid > div {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .inner-hero-content h1,
+  .hero h1,
+  .page-card h1 {
+    font-size: clamp(38px, 10vw, 46px);
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .inner-hero-content p,
+  .hero p {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.65;
   }
 }
