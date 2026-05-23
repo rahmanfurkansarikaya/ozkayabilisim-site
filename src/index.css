@@ -266,8 +266,8 @@ main {
 .page-card h1 {
   margin: 0;
   font-size: clamp(48px, 8vw, 96px);
-  line-height: 0.9;
-  letter-spacing: -0.075em;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
 }
 
 .hero h1 {
@@ -931,8 +931,8 @@ main {
   margin: 0;
   color: #ffffff;
   font-size: clamp(42px, 6vw, 76px);
-  line-height: 0.96;
-  letter-spacing: -0.065em;
+  line-height: 1;
+  letter-spacing: -0.04em;
 }
 
 .inner-hero-content p {
@@ -1153,10 +1153,11 @@ main {
     gap: 28px;
   }
 
-  .inner-hero-content h1 {
-    font-size: 42px;
-    letter-spacing: -0.05em;
-  }
+.inner-hero-content h1 {
+  font-size: 42px;
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+}
 
   .inner-hero-content p {
     font-size: 16px;
@@ -2357,5 +2358,274 @@ main {
 
   .nav-links.open {
     display: flex !important;
+  }
+}
+/* REFERENCES PAGE */
+
+.references-hero::before {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(47, 147, 255, 0.38), transparent 30%),
+    radial-gradient(circle at 18% 82%, rgba(159, 208, 255, 0.12), transparent 28%),
+    linear-gradient(135deg, rgba(7, 26, 49, 0.98), rgba(18, 60, 105, 0.94));
+}
+
+.references-hero::after {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -220px;
+  bottom: -230px;
+  border-radius: 999px;
+  background: rgba(47, 147, 255, 0.16);
+}
+
+.references-panel {
+  border-color: rgba(159, 208, 255, 0.22);
+}
+
+.references-section {
+  background:
+    radial-gradient(circle at top left, rgba(31, 111, 178, 0.11), transparent 34%),
+    #f8f4ec;
+}
+
+.reference-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.reference-video-card {
+  overflow: hidden;
+  border-radius: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(16, 42, 67, 0.06);
+  box-shadow: 0 14px 40px rgba(16, 42, 67, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reference-video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(16, 42, 67, 0.12);
+}
+
+.reference-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background:
+    radial-gradient(circle at top right, rgba(47, 147, 255, 0.28), transparent 38%),
+    linear-gradient(135deg, #102a43, #123c69);
+}
+
+.reference-video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.reference-video-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: #dbeafe;
+  font-weight: 900;
+}
+
+.reference-video-placeholder span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.reference-video-content {
+  padding: 26px;
+}
+
+.reference-video-content span {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #eaf4ff;
+  color: #1f6fb2;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.reference-video-content h3 {
+  margin: 0 0 12px;
+  color: #102a43;
+  font-size: 24px;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.reference-video-content p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.references-cta-section {
+  padding-top: 0;
+  background: #f8f4ec;
+}
+
+@media (max-width: 1080px) {
+  .reference-video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .reference-video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reference-video-card {
+    border-radius: 24px;
+  }
+
+  .reference-video-content {
+    padding: 22px;
+  }
+
+  .reference-video-content h3 {
+    font-size: 22px;
+  }
+}
+/* REFERENCES TRUST AND PLACES */
+
+.references-trust-section {
+  padding: 42px 0;
+  background: #071a31;
+  color: #ffffff;
+}
+
+.reference-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.reference-trust-card {
+  min-height: 180px;
+  padding: 28px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(47, 147, 255, 0.26), transparent 36%),
+    rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.reference-trust-card h3 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 25px;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.reference-trust-card p {
+  margin: 0;
+  color: #dbeafe;
+  line-height: 1.65;
+}
+
+.reference-places-section {
+  background:
+    radial-gradient(circle at top left, rgba(31, 111, 178, 0.11), transparent 34%),
+    #f8f4ec;
+}
+
+.reference-group-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.reference-group-card {
+  display: flex;
+  min-height: 420px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 30px;
+  border-radius: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(16, 42, 67, 0.06);
+  box-shadow: 0 14px 40px rgba(16, 42, 67, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reference-group-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(16, 42, 67, 0.12);
+}
+
+.reference-group-card span {
+  display: inline-flex;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #eaf4ff;
+  color: #1f6fb2;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.reference-group-card p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.reference-name-list {
+  display: grid;
+  gap: 10px;
+}
+
+.reference-name-list strong {
+  display: block;
+  padding: 13px 15px;
+  border-radius: 16px;
+  background: #f8f4ec;
+  color: #102a43;
+  font-size: 14px;
+  line-height: 1.35;
+  border-left: 4px solid #1f6fb2;
+}
+
+@media (max-width: 1080px) {
+  .reference-trust-grid,
+  .reference-group-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reference-group-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .references-trust-section {
+    padding: 28px 0;
+  }
+
+  .reference-trust-card,
+  .reference-group-card {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .reference-trust-card {
+    min-height: auto;
+  }
+
+  .reference-trust-card h3 {
+    font-size: 23px;
   }
 }

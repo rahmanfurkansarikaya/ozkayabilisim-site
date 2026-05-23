@@ -5,9 +5,10 @@ import { iletisimBilgileri } from "../veriler/iletisim";
 const menuItems = [
   { to: "/", label: "Ana Sayfa" },
   { to: "/teknik-destek", label: "Teknik Destek" },
-  { to: "/eglence", label: "Eğlence" },
   { to: "/guvenlik-sistemleri", label: "Güvenlik Sistemleri" },
   { to: "/bilgisayar-donanim", label: "Bilgisayar & Donanım" },
+  { to: "/eglence", label: "Eğlence" },
+  { to: "/referanslar", label: "Referanslar" },
   { to: "/hakkimizda", label: "Hakkımızda" },
 ];
 

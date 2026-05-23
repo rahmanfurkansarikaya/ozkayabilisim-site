@@ -8,6 +8,7 @@ import GuvenlikSistemleri from "./sayfalar/GuvenlikSistemleri";
 import BilgisayarDonanim from "./sayfalar/BilgisayarDonanim";
 import Hakkimizda from "./sayfalar/Hakkimizda";
 import Iletisim from "./sayfalar/Iletisim";
+import Referanslar from "./sayfalar/Referanslar";
 import Analytics from "./bilesenler/Analytics";
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/bilgisayar-donanim" element={<BilgisayarDonanim />} />
           <Route path="/hakkimizda" element={<Hakkimizda />} />
           <Route path="/iletisim" element={<Iletisim />} />
+          <Route path="/referanslar" element={<Referanslar />} />
         </Route>
       </Routes>
     </BrowserRouter>

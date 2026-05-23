@@ -6,6 +6,9 @@ type SeoProps = {
   canonicalPath?: string;
 };
 
+const SITE_URL = "https://ozkayabilisim.com.tr";
+const DEFAULT_IMAGE = `${SITE_URL}/images/magaza2.webp`;
+
 function setMeta(name: string, content: string) {
   let element = document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
 
@@ -44,24 +47,37 @@ function setCanonical(url: string) {
   element.setAttribute("href", url);
 }
 
-export default function Seo({ title, description, canonicalPath = "/" }: SeoProps) {
+function normalizePath(path: string) {
+  if (path === "/") return "/";
+  return path.startsWith("/") ? path : `/${path}`;
+}
+
+export default function Seo({
+  title,
+  description,
+  canonicalPath = "/",
+}: SeoProps) {
   useEffect(() => {
-    const siteUrl = "https://ozkayabilisim.com.tr";
-    const canonicalUrl = `${siteUrl}${canonicalPath}`;
+    const normalizedPath = normalizePath(canonicalPath);
+    const canonicalUrl = `${SITE_URL}${normalizedPath}`;
 
     document.title = title;
 
     setMeta("description", description);
     setMeta("robots", "index, follow");
 
+    setPropertyMeta("og:type", "website");
+    setPropertyMeta("og:locale", "tr_TR");
+    setPropertyMeta("og:site_name", "Özkaya Bilişim");
     setPropertyMeta("og:title", title);
     setPropertyMeta("og:description", description);
     setPropertyMeta("og:url", canonicalUrl);
-    setPropertyMeta("og:image", `${siteUrl}/images/magaza2.webp`);
+    setPropertyMeta("og:image", DEFAULT_IMAGE);
 
+    setMeta("twitter:card", "summary_large_image");
     setMeta("twitter:title", title);
     setMeta("twitter:description", description);
-    setMeta("twitter:image", `${siteUrl}/images/magaza2.webp`);
+    setMeta("twitter:image", DEFAULT_IMAGE);
 
     setCanonical(canonicalUrl);
   }, [title, description, canonicalPath]);
